@@ -27,7 +27,7 @@ def split_list(liststring):
         liststring = [{'DeleteOnTermination': '---', 'Value': '===', 'InstanceId': '---', 'Device': '---'}]
     return liststring
 #list the info vpc&subnet&network_interface
-with open('D:\Aws_EBS.csv','w',newline='') as File:
+with open('D:\Aws_EBS.csv','w',encoding='utf-8',newline=') as File:
     File_csv = csv.writer(File)
     File_csv.writerow(headers)
     for ebs in ec2.volumes.all():
