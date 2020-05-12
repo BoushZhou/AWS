@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  ace-vote-back:
+    image: redis
+    container_name: ace-vote-back
+    ports:
+        - "6379:6379"
+
+  ace-vote-front:
+    build: ./ace-vote
+    image: ace-vote-front
+    container_name: ace-vote-front
+    environment:
+      REDIS: ace-vote-back
+    ports:
+        - "8080:80"
